@@ -1,0 +1,84 @@
+<% if(loggedin == true && type=="a")
+{
+  %>
+
+  <%-include('headerad'); -%>
+
+<%
+}
+else if(loggedin == true && type=="u")
+{
+  %>
+
+  <%-include('headeral'); -%>
+
+  <%
+}else{
+%>
+<%-include('header'); -%>
+<%
+}
+%>
+<html>
+  <style>
+    body {margin: 0;
+      /* border-color: white; */
+    }
+    .addform input[type=text],[type=email],select {
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 90px;
+      box-sizing: border-box;
+    }
+    
+    .addform input[type=submit] {
+      width: 50%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .addform input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    .addform {
+      border-bottom-right-radius:20px;
+      background-color:#f4f0ec;
+    }
+    </style>
+     <%
+     if(emailData.length!=0){
+       emailData.forEach(function(data){
+     %>
+  <div style="padding:0 16px;">
+    <center>
+      <div class="addform">
+    <h2>Contact Person</h2>
+    <form action="https://formsubmit.co/<%=data.email%>" method="POST">
+  <label for="fname">Enter your email:</label><br>
+      <input type="email" id="email" name="email" placeholder="abc@gmail.com"><br>
+      <label for="lname"> Your Message:</label><br>
+      <input type="text" id="msg" name="msg" placeholder="Hey,"><br><br>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="http://localhost:3001/#emailsent=true">
+    <input type="submit" value="Submit" name="submit" id="submit">
+    </form> 
+  </div>
+  </center>
+  </div>
+  
+  </body>
+  <%   }) %>
+  <% } else{ %>
+    <h1>NOT FOUND</h1>
+    <% } %>
+    <%-include('footer'); -%>
+</html>

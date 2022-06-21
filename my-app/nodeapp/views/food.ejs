@@ -1,0 +1,57 @@
+<% if(loggedin == true && type=="a")
+{
+  %>
+
+  <%-include('headerad'); -%>
+
+<%
+}
+else if(loggedin == true && type=="u")
+{
+  %>
+
+  <%-include('headeral'); -%>
+
+  <%
+}else{
+%>
+<%-include('header'); -%>
+<%
+}
+%>
+<html>
+<head>
+  <script>
+ </script>
+	<link rel="stylesheet" type="text/css" href="./style1.css"> 
+	</head>
+    <%
+    if(foodData.length!=0){
+    foodData.forEach(function(data){
+      let id=data.f_id;
+    %>
+    <center>
+      <div class="space">
+      <table>
+      <tr>
+      <td style="width:30%">
+          <img src=<%=data.photos %> alt="banquets" />
+      </td>
+      <td style="width:70%">
+        <h3><a href="http://localhost:3001/fooddesc?f_id=<%=id %>"><%=data.name %></a></h3>
+    <p>Contact Number:-<%=data.contact %></p><br>
+        <p>Product Description:-<%=data.description %>
+        </p>
+        <p>Price:-<%=data.prices %></p>
+        <button class="book" onclick="window.location.href = 'http://localhost:3001/fooddesc?f_id=<%=id %>'">See More</button>
+      </td>
+      </tr>
+      </table>
+      </div>
+      <%   }) %>
+      <% } else{ %>
+        <h1>NOT FOUND</h1>
+        <% } %>
+      </center>
+      <%-include('footer'); -%>
+</body>

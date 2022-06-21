@@ -1,0 +1,21 @@
+<%-include('headeral'); -%>
+        <center><div class="w3-container" style="margin-top: 2vw;height:40vw;width:80vw;">
+            <img src="paytm.jpg"class="w3-border" style="padding:4px;width:30vw; height:60vw;">
+          </div>
+          <div style="margin-top:25vw; font-size: 3vw;"; >
+          Paid Successfully?<br>
+          <form method="post" action="paymentinsert">
+          <div class="fancy-input">
+            <input type="text" class="fancy-input--input"  placeholder="Payment transaction-id" name="pay_id" id="pay_id" required />
+            <input type="hidden" name="usr_id" id="usr_id" value=<%=usr_id%> >
+            <input type="hidden" name="p_id" id="p_id" value=<%=p_id%> >
+            <input type="hidden" name="price" id="price" value=<%=price%> >
+            <br>
+            <br>
+            <input type="submit" name="submit" id="submit" class="paymentransbutton" type="submit"></button>
+          </div>
+        </div>
+        </center>
+    </form>
+    <%-include('footer'); -%>
+        </body>

@@ -1,0 +1,48 @@
+<% if(loggedin == true && type=="a")
+{
+  %>
+
+  <%-include('headerad'); -%>
+
+<%
+}
+else if(loggedin == true && type=="u")
+{
+  %>
+
+  <%-include('headeral'); -%>
+
+  <%
+}else{
+%>
+<%-include('header'); -%>
+<%
+}
+%>
+
+    <%
+    if(roomateDesc.length!=0){
+        roomateDesc.forEach(function(data){
+    %>
+    <center><div class="w3-container" style="margin-top: 2vw;height:40vw;width:80vw;">
+        <img src="<%=data.photos %>"class="w3-border" style="padding:4px;width:60vw; height:30vw;">
+      </div>
+    </center>
+    <br>
+    <br>
+    <br>
+      <div style="margin-left:8vw;margin-top:-13vw;">
+        <h1 style="font-size: 5vw;"><%=data.name %></h1>
+      <h1 style="font-size: 2vw;">Contact Number:-</h1>
+      <p style="font-size: 1.5vw;"> <%=data.phone %></p>
+      <h1 style="font-size: 2vw;">Address:-</h1>
+      <p style="font-size: 1.5vw;"> <%=data.address %></p>
+      </div>
+      <button class="contactseller" onclick="window.location.href = 'http://localhost:3001/contactseller?email=<%=email%>'">Contact</button>
+
+            <%   }) %>
+            <% } else{ %>
+              <h1>NOT FOUND</h1>
+              <% } %>
+              <%-include('footer'); -%>
+        </body>

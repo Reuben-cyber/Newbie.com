@@ -1,0 +1,91 @@
+<%-include('headeral'); -%>
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./style1.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {margin: 0;
+  /* border-color: white; */
+}
+.addform input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 90px;
+  box-sizing: border-box;
+}
+
+.addform input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addform input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.addform {
+  border-bottom-right-radius:20px;
+  background-color:#f4f0ec;
+}
+</style>
+</head>
+<body>
+
+  <ul class="topnav">
+    <li><a  href="/userfunction">Add Product</a></li>
+    <li><a href="/updateitem" class="active">Update Items</a></li>
+    <li><a href="/additems">Add Items</a></li>
+    <li><a href="/deleteuserfunction">Delete Items</a></li>
+    <li><a href="/updatepassword" >Change Password</a></li>
+  </ul>
+
+<div style="padding:0 16px;">
+  <center>
+    <%
+    if(listDesc.length!=0){
+      listDesc.forEach(function(data){
+    %>
+    <div class="addform">
+  <h2>Add Item</h2>
+  <form action="finalupdate" method="POST" >
+<label for="fname">Name of Product:</label><br>
+    <input type="text" id="name" name="name" value=<%=data.name%> ><br>
+    <label for="lname">Description:</label><br>
+    <input type="text" id="desc" name="desc" value=<%=data.description%>><br><br>
+    <label for="fname">Contact:</label><br>
+    <input type="text" id="contact" name="contact" value=<%=data.contact%>><br>
+    <label for="fname">Price:</label><br>
+    <input type="text" id="price" name="price" value=<%=data.prices%>><br>
+    <label for="fname">Reviews:</label><br>
+    <input type="text" id="review" name="review" value=<%=data.reviews%>><br>
+    <label for="fname">Location:</label><br>
+    <input type="text" id="location" name="location" value=<%=data.location%> ><br>
+    <label for="fname">Timings:</label><br>
+    <input type="text" id="timings" name="timings" value=<%=data.timings%>><br>
+<input type="hidden" id="usr_id" name="usr_id" value=<%=usr_id%> >
+<input type="hidden" id="category" name="category" value=<%=category%> >
+<input type="hidden" id="item" name="item" value=<%=item%> >
+    <input type="submit" value="Submit" name="submit" id="submit">
+  </form> 
+</div>
+</center>
+</div>
+<%   }) %>
+<% } else{ %>
+  <h1>NOT FOUND</h1>
+  <% } %>
+  <%-include('footer'); -%>
+</body>
+</html>
+
+

@@ -1,0 +1,64 @@
+<%-include('headeral'); -%>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./style1.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width:90%;
+      margin-left:50px;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+</head>
+<body>
+<ul class="topnav">
+<li><a  href="/userfunction">Add Product</a></li>
+  <li><a href="/updateitem">Update Product</a></li>
+  <li><a href="/additems">Add Items</a></li>
+  <li><a href="/deleteuserfunction">Delete Items</a></li>
+  <li><a href="/updatepassword">Change Password</a></li>
+  <li><a href="/userpayment" class="active">Payments</a></li>
+  <li><a href="/userprofile">Profile</a></li>
+</ul>
+<br>
+<table>
+    <tr>
+      <th>Payment Id</th>
+      <th>Transaction Id</th>
+      <th>Date of payment</th>
+      <th>Payment Amount</th>
+      <th>Payment Status(Will show completed after verified by the admin)</th>
+      <th>Product Name</th>
+    </tr>
+    <%
+    if(paymentuserData.length!=0){
+      paymentuserData.forEach(function(data){
+    %>
+    <tr>
+      <td><%=data.pay_id%></td>
+      <td><%=data.trans_id%></td>
+      <td><%=data.date%></td>
+      <td><%=data.amt%></td>
+      <td><%=data.status%></td>
+      <td><%=data.name%></td>
+    </tr>
+    <%   }) %>
+    <% } else{ %>
+      <h1>NOT FOUND</h1>
+      <% } %>
+    </table>
+</body>
+</html>

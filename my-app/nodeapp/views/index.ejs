@@ -1,0 +1,245 @@
+<% if(loggedin == true && type=="a")
+{
+  %>
+
+  <%-include('headerad'); -%>
+
+<%
+}
+else if(loggedin == true && type=="u")
+{
+  %>
+
+  <%-include('headeral'); -%>
+
+  <%
+}else{
+%>
+<%-include('header'); -%>
+<%
+}
+%>
+<html>
+  <script>
+    if(window.location=="http://localhost:3001/#login=true")
+   {
+  alert("Login Successfull!!");
+ }
+ if(window.location=="http://localhost:3001/#login=admin")
+   {
+  alert(" Admin Login Successfull!!");
+ }
+ if(window.location=="http://localhost:3001/#changedpass=true")
+   {
+  alert("Password reset Successfully!!");
+ }
+ if(window.location=="http://localhost:3001/#updateditem=true")
+   {
+  alert("Item Updated Successfully!!");
+ }
+ if(window.location=="http://localhost:3001/#emailsent=true")
+   {
+  alert("Email Sent Successfully!!");
+ }
+ if(window.location=="http://localhost:3001/#login=false")
+   {
+  alert("Incorrect credentials Try Again!!");
+ }
+ if(window.location=="http://localhost:3001/#recordinserted=true")
+   {
+  alert("Record inserted Successfull!!");
+ }
+ if(window.location=="http://localhost:3001/#signup=true")
+   {
+  alert("Signup Successfull!!");
+ }
+ if(window.location=="http://localhost:3001/#payment=true")
+   {
+  alert("Payment recorded Admin will confirm soon!!");
+ }
+ </script>
+    <div class="content">
+      <p align="center" style="margin-left: -1vw; margin-top: -1vw;">
+      <div class="slideshow-container">
+  <div class="mySlides">
+    <img src="1.png">
+  </div>
+  
+  <div class="mySlides">
+    <img src="2.png">
+  </div>
+  
+  <div class="mySlides">
+    <img src="3.png">
+  </div>
+  
+  <div class="mySlides">
+    <img src="4.png">
+  </div>
+  <div class="mySlides">
+    <img src="5.png">
+  </div>
+  
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  
+  </div>
+  </p>
+  </div>
+  <ul class="cards">
+    <li>
+      <a href="http://localhost:3001/product" class="card">
+                <img src="pro.png" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <div class="card__header-text">
+              <h3 class="card__title">Products</h3>            
+              <span class="card__status">Sell and buy items.</span>
+            </div>
+          </div>
+          <p class="card__description">You can sell your used items or can purchase items used by other students in this section.Saving you the cost of buying newer products.</p>
+        </div>
+      </a>      
+    </li>
+    <li>
+      <a href="http://localhost:3001/stay" class="card">
+        <img src="stay.png" class="card__image" alt="" />
+        <div class="card__overlay">        
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <div class="card__header-text">
+              <h3 class="card__title">Stay</h3>
+              <span class="card__status">Living solutions.</span>
+            </div>
+          </div>
+          <p class="card__description">Get information on all kinds of living solutions such as pgs,hostels,flats,sharing flats,etc.</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="http://localhost:3001/education" class="card">
+        <img src="education.png" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <div class="card__header-text">
+              <h3 class="card__title">Education</h3>          
+              <span class="card__status">Book-stores,xerox shops,second-hand book marts,etc.</span>
+            </div>
+          </div>
+          <p class="card__description">Information on all education related stores around your location.</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="http://localhost:3001/food" class="card">
+        <img src="food.png" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <div class="card__header-text">
+              <h3 class="card__title">Food</h3>
+              <span class="card__status">Most visited hangout places.</span>
+            </div>          
+          </div>
+          <p class="card__description">All the restaurants,cafes,pubs,etc.Where students spend most of their free time at.</p>
+        </div>
+      </a>
+    </li>    
+  </ul>
+
+  <!-- //Second row of items  -->
+  <div style="margin-top:-30vw;">
+  <ul class="cards">
+    <li>
+      <a href="http://localhost:3001/shopping" class="card">
+        <img src="shopping.png" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <div class="card__header-text">
+              <h3 class="card__title">Shopping</h3>            
+              <span class="card__status">Go shopping with friends.</span>
+            </div>
+          </div>
+          <p class="card__description">Explore all famous places for shopping with friends .</p>
+        </div>
+      </a>      
+    </li>
+    <li>
+      <a href="http://localhost:3001/places" class="card">
+        <img src="places.png" class="card__image" alt="" />
+        <div class="card__overlay">        
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <div class="card__header-text">
+              <h3 class="card__title">Places to visit</h3>
+              <span class="card__status">Sight-seeing.</span>
+            </div>
+          </div>
+          <p class="card__description">Dont miss out on exploring these places.</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="http://localhost:3001/travel" class="card">
+        <img src="travel.png" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <div class="card__header-text">
+              <h3 class="card__title">Travel</h3>          
+              <span class="card__status">Best routes and modes to travel around.</span>
+            </div>
+          </div>
+          <p class="card__description">Find all the timmings,stops,etc to the various places using various modes of transport and the fastes route to get to your destination.</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="http://localhost:3001/roomate" class="card">
+        <img src="roomate.png" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <div class="card__header-text">
+              <h3 class="card__title">Roomate</h3>
+              <span class="card__status">Find a room mate.</span>
+            </div>          
+          </div>
+          <p class="card__description">Helps you check various profiles of people registered to our system and helps you find the perfect room-mate.</p>
+        </div>
+      </a>
+    </li>    
+  </ul>
+</div>
+<%-include('footer'); -%>
+  </body>
+  <script type="text/javascript">
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+    </script>
+</html>

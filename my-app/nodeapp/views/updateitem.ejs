@@ -1,0 +1,87 @@
+<%-include('headeral'); -%>
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./style1.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {margin: 0;
+  /* border-color: white; */
+}
+.addform input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 90px;
+  box-sizing: border-box;
+}
+
+.addform input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addform input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.addform {
+  border-bottom-right-radius:20px;
+  background-color:#f4f0ec;
+}
+</style>
+</head>
+<body>
+
+  <ul class="topnav">
+    <li><a href="/userfunction">Add Product</a></li>
+    <li><a href="/updateitem" class="active">Update Items</a></li>
+    <li><a href="/additems">Add Items</a></li>
+    <li><a href="/deleteuserfunction" >Delete Items</a></li>
+    <li><a href="/updatepassword">Change Password</a></li>
+    <li><a href="/userpayment">Payments</a></li>
+    <li><a href="/userprofile">Profile</a></li>
+  </ul>
+
+<div style="padding:0 16px;">
+  <center>
+    <div class="addform">
+  <h2>Update Item</h2>
+  <form action="updatefrom" method="POST" >
+    <label> Select Category </label>  
+<select name="category" id="category">  
+<option value = "places"> Places to visit  
+</option>  
+<option value = "shopping"> Shopping 
+</option>  
+<option value = "stay"> Stay 
+</option>  
+</option>  
+<option value = "food"> Food  
+</option>  
+</option>  
+<option value = "education"> Education   
+</option>  
+</option>  
+<option value = "travel">Travel 
+</option>  
+</select>  
+<input type="hidden" id="usr_id" name="usr_id" value=<%=usr_id%>>
+    <input type="submit" value="Submit">
+  </form> 
+</div>
+</center>
+</div>
+
+</body>
+</html>
+
+

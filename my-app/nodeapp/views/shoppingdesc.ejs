@@ -1,0 +1,69 @@
+<% if(loggedin == true && type=="a")
+{
+  %>
+
+  <%-include('headerad'); -%>
+
+<%
+}
+else if(loggedin == true && type=="u")
+{
+  %>
+
+  <%-include('headeral'); -%>
+
+  <%
+}else{
+%>
+<%-include('header'); -%>
+<%
+}
+%>
+    <%
+    if(shoppingDesc.length!=0){
+      shoppingDesc.forEach(function(data){
+        let location=data.location;
+        let price=data.prices;
+        let p_id=data.s_id;
+        let name=data.name;
+    %>
+    <center><div class="w3-container" style="margin-top: 2vw;height:40vw;width:80vw;">
+        <img src="<%=data.photos %>"class="w3-border" style="padding:4px;width:60vw; height:30vw;">
+      </div>
+    </center>
+    <br>
+    <br>
+      <div style="margin-left:8vw;margin-top:-13vw;">
+        <h1 style="font-size: 5vw;"><%=data.name %></h1>
+      <h1 style="font-size: 2vw;">Description of product:-</h1>
+      <p style="font-size: 1.5vw;"> <%=data.description %></p>
+      <h1 style="font-size: 2vw;">Contact Number:-</h1>
+      <p style="font-size: 1.5vw;"> <%=data.contact %></p>
+      <h1 style="font-size: 2vw;">Reviews by user:-</h1>
+      <p style="font-size: 1.5vw;"> <%=data.reviews %></p>
+      <h1 style="font-size: 2vw;">Location:-</h1>
+      <p style="font-size: 1.5vw;"> <%=data.location %></p>
+      <h1 style="font-size: 2vw;">Timmings:-</h1>
+      <p style="font-size: 1.5vw;"> <%=data.timmings %></p>
+      <h1 style="font-size: 2vw;">Price:-RS<%=data.prices %></h1>
+      </div>
+      <button class="contactseller" onclick="window.location.href = 'http://localhost:3001/contactseller1?name=<%=name%>&cat=shopping'">Contact Seller</button>
+        <iframe class="map"
+                src="https://maps.google.it/maps?q=<%=data.location %>&output=embed"
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                aria-hidden="false" 
+                tabindex="0"
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0";
+                >
+            </iframe>
+
+            <%   }) %>
+            <% } else{ %>
+              <h1>NOT FOUND</h1>
+              <% } %>
+              <%-include('footer'); -%>
+        </body>

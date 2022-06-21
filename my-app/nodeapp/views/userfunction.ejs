@@ -1,0 +1,93 @@
+<%-include('headeral'); -%>
+
+<html>
+<head>
+  <script>
+        if(window.location=="http://localhost:3001/userfunction#deleteditem=true")
+   {
+  alert("Item Deleted Successfully!!");
+ }
+ if(window.location=="http://localhost:3001/userfunction#updatedpass")
+   {
+  alert("Password Updated Successfully!!");
+ }
+  </script>
+  <link rel="stylesheet" type="text/css" href="./style1.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {margin: 0;
+  /* border-color: white; */
+}
+.addform input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 90px;
+  box-sizing: border-box;
+}
+
+.addform input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addform input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.addform {
+  border-bottom-right-radius:20px;
+  background-color:#f4f0ec;
+}
+</style>
+</head>
+<body>
+
+<ul class="topnav">
+  <li><a class="active" href="/userfunction">Add Product</a></li>
+  <li><a href="/updateitem">Update Product</a></li>
+  <li><a href="/additems">Add Items</a></li>
+  <li><a href="/deleteuserfunction">Delete Items</a></li>
+  <li><a href="/updatepassword">Change Password</a></li>
+  <li><a href="/userpayment">Payments</a></li>
+  <li><a href="/userprofile">Profile</a></li>
+</ul>
+
+<div style="padding:0 16px;">
+  <center>
+    <div class="addform">
+  <h2>Add Product</h2>
+  <form action="itemform" method="POST" enctype="multipart/form-data">
+    <label for="fname">Name of Product:</label><br>
+    <input type="text" id="name" name="name" placeholder="Dell Latitude"><br>
+    <label for="lname">Description:</label><br>
+    <input type="text" id="desc" name="desc" placeholder="i5 6th gen...."><br><br>
+    <label for="fname">Photos:</label><br>
+    <input type="file" id="photos" name="photos"><br>
+    <label for="fname">Contact:</label><br>
+    <input type="text" id="contact" name="contact" placeholder="9823708223"><br>
+    <label for="fname">Price:</label><br>
+    <input type="text" id="price" name="price" placeholder="1200000"><br>
+    <label for="fname">Reviews:</label><br>
+    <input type="text" id="review" name="review" placeholder="used only for 2 yrs"><br>
+    <label for="fname">Location:</label><br>
+    <input type="text" id="location" name="location" placeholder="S.G. Palya"><br>
+    <input type="hidden" id="usr_id" name="usr_id" value=<%=usr_id%>>
+<input type="submit" value="Submit">
+  </form> 
+</div>
+</center>
+</div>
+
+</body>
+</html>
+
+
